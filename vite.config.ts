@@ -8,7 +8,7 @@ export default defineConfig({
   // Build optimizations
   build: {
     target: 'es2015',
-    minify: 'terser',
+    minify: true, // use default (esbuild)
     sourcemap: false,
     rollupOptions: {
       output: {
@@ -16,12 +16,6 @@ export default defineConfig({
           vendor: ['react', 'react-dom'],
           helmet: ['react-helmet-async']
         }
-      }
-    },
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
       }
     }
   },
